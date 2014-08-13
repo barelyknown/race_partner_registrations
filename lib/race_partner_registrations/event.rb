@@ -37,9 +37,9 @@ module RacePartnerRegistrations
     def to_csv
       download_registrations! unless downloaded?
       CSV.generate do |csv|
-        csv << ["name", "location"]
+        csv << ["name", "location","state"]
         registrations.each do |registration|
-          csv << [:name, :location].collect { |attr| registration.send(attr) }
+          csv << [:name, :location, :state].collect { |attr| registration.send(attr) }
         end
       end
     end

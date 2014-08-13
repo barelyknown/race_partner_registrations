@@ -10,7 +10,7 @@
 
 ## Usage
 
-The `name` and `location` are extracted from the entrance list.
+The `name` and `location` are extracted from the entrance list. The `state` is extracted from the `location`.
 
 ### Examples
 
@@ -25,8 +25,8 @@ irb> event = RacePartnerRegistrations::Event.new(url)
 An event can be converted to a CSV.
 ```
 irb> puts event.to_csv
-name,location
-Sean Devine,"Suffield, CT"
+name,location,state
+Sean Devine,"Suffield, CT",CT
 ```
 
 Or, you can also download the registrations and iterate through them directly.
@@ -38,4 +38,6 @@ irb> registration.name
 => "Sean Devine"
 irb> registration.location
 => "Suffield, CT"
+irb> registration.state
+=> "CT"
 ```

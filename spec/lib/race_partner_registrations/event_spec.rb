@@ -52,7 +52,7 @@ module RacePartnerRegistrations
           allow(subject).to receive(:download_registrations!)
           allow(subject).to receive(:registrations).and_return([Registration.new("Sean Devine", "Suffield, CT")])
         end
-        it "generates the csv" do          expect(subject.to_csv).to eq "name,location\nSean Devine,\"Suffield, CT\"\n"
+        it "generates the csv" do          expect(subject.to_csv).to eq "name,location,state\nSean Devine,\"Suffield, CT\",CT\n"
         end
       end
     end

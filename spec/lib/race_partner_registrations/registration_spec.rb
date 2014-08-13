@@ -19,6 +19,23 @@ module RacePartnerRegistrations
       it "sets and get the location" do
         expect(subject.location).to eq location
       end
+      describe "#state" do
+        [
+          ["Suffield, CT", "CT"],
+          ["Voorheesville, ny", "NY"]
+        ].each do |l, s|
+          context "when the location is #{l}" do
+            let(:location) { l }
+            let(:state) { s }
+            subject do
+              described_class.new name, location
+            end
+            it "extracts the state #{s}" do
+              expect(subject.state).to eq state
+            end
+          end
+        end
+      end
     end
 
     context "when initialized without a name and location" do
