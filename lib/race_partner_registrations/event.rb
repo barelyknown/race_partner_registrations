@@ -68,7 +68,8 @@ module RacePartnerRegistrations
     end
 
     def single_page_url(state_value)
-      url + "?State=#{state_value}&PageSize=#{200_000_000}&PageIndex=1&Submitted=true"
+      base_url = url.split("?")[0]
+      base_url + "?State=#{state_value}&PageSize=#{200_000_000}&PageIndex=1&Submitted=true"
     end
 
   end
