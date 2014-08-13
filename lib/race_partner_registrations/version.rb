@@ -1,0 +1,3 @@
+module RacePartnerRegistrations
+  VERSION = "0.0.1"
+end
