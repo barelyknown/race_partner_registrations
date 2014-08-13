@@ -29,7 +29,7 @@ name,location
 Sean Devine,"Suffield, CT"
 ```
 
-You can also download the registrations and iterate through them directly.
+Or, you can also download the registrations and iterate through them directly.
 
 ```bash
 irb> event.download_registrations!
